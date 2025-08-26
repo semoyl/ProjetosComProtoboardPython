@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "author": "victor hugo",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": -19.2,
+      "left": 14.44,
+      "attrs": { "env": "micropython-20231227-v1.22.0" }
+    },
+    { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": -152.1, "left": -23.3, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -13.2,
+      "left": 243.8,
+      "attrs": { "color": "red" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "led1:A", "esp:17", "green", [ "v0" ] ],
+    [
+      "led1:C",
+      "ultrasonic1:GND",
+      "green",
+      [ "v38.4", "h-47.6", "v-38.4", "h-38.4", "v-67.2", "h-86.4" ]
+    ],
+    [ "ultrasonic1:VCC", "esp:3V3", "red", [ "v76.8", "h-28.8" ] ],
+    [ "ultrasonic1:ECHO", "esp:23", "green", [ "v76.8", "h8.8" ] ],
+    [ "ultrasonic1:TRIG", "esp:GND.2", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
