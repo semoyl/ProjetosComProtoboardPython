@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "author": "Gustavo Rocha",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 45, "left": -64.4, "attrs": {} },
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 9.6,
+      "left": -225.56,
+      "attrs": { "env": "micropython-20231227-v1.22.0" }
+    },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -18.9, "left": -53.4, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 186.35,
+      "left": 67.2,
+      "attrs": { "value": "1000" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": 265.2, "left": 61.4, "attrs": { "color": "red" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "dht1:VCC", "bb1:1t.a", "red", [ "v0" ] ],
+    [ "dht1:GND", "bb1:4t.a", "black", [ "v0" ] ],
+    [ "esp:GND.2", "bb1:bn.5", "blue", [ "h9.6", "v172.8", "h123.2" ] ],
+    [ "bb1:bn.4", "dht1:GND", "green", [ "v0" ] ],
+    [ "esp:5V", "dht1:VCC", "red", [ "v19.2", "h182.55" ] ],
+    [ "led1:C", "bb1:bn.6", "green", [ "h-47.6", "v-65.9" ] ],
+    [ "led1:A", "r1:2", "gold", [ "h48", "v-115.2" ] ],
+    [ "r1:1", "bb1:12b.i", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:18b.i", "", [ "$bb" ] ],
+    [ "esp:34", "dht1:NC", "#8f4814", [ "h-19.05", "v-76.8", "h220.7" ] ],
+    [ "dht1:SDA", "bb1:2t.a", "", [ "$bb" ] ],
+    [ "dht1:NC", "bb1:3t.a", "", [ "$bb" ] ],
+    [ "esp:26", "r1:1", "violet", [ "h-9.45", "v57.6", "h297.6" ] ]
+  ],
+  "dependencies": {}
+}
