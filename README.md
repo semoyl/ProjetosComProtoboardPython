@@ -61,7 +61,7 @@ Este repositório contém 4 projetos desenvolvidos com a placa **ESP32**, integr
 
 ## Estrutura dos Arquivos
 
-![](./printestrutura)
+![](./printestrutura.png)
 
 ---
 ## Tecnologias Utilizadas
