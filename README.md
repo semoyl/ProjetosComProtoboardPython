@@ -22,7 +22,7 @@ Feito no [SENAI Jandira](https://sp.senai.br/unidade/jandira/)
 
 ---
 
-##Participantes
+## Participantes
 
 - [Gustavo Rocha](https://www.linkedin.com/in/gustavo-rocha-gomes-3b1442327/)
 - [Victor Hugo](https://github.com/victorhugoaurelianocoltro)
