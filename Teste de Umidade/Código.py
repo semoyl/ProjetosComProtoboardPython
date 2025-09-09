@@ -11,7 +11,7 @@ led_seco = Pin(PINO_LED_SECO, Pin.OUT)
 
 sensor_umidade.width(ADC.WIDTH_12BIT)
 
-sensor_umidade.atten(ADC.ATTN_11DB)
+sensor_umidade.atten(ADC.ATB_11DB)
 
 while True:
     valor_umidade = sensor_umidade.read()
